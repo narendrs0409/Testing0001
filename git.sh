@@ -39,11 +39,14 @@ while true; do
             git branch -m $branch_name
             ;;
         5)
-            # Prompt for remote URL
-            read -p "Enter the remote URL: " remote_url
+            # Prompt for GitHub repository URL
+            read -p "Enter the GitHub repository URL (e.g. https://github.com/narendrs0409/): " github_url
+
+            # Prompt for repository name
+            read -p "Enter the name of the repository: " repo_name
 
             # Run git remote add with user input
-            git remote add origin $remote_url
+            git remote add origin "$github_url$repo_name.git"
             ;;
         6)
             # Prompt for branch name
@@ -62,4 +65,4 @@ while true; do
             ;;
     esac
 done
-`
+
